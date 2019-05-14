@@ -1,0 +1,32 @@
+#
+#       Franck Bourdonnec proposed a way to add descriptions for using
+#       blacklists in IPCop.
+#       UTF-8 is required to display the text properly!
+#       The proposed layout  is:
+#
+#       NAME :         name of tar blacklist
+#       DEFAULT_TYPE : what is the primary use of this blacklist
+#                      (can be inverted, i.e. for webmail)
+#       SOURCE :       Url of the main provider of information
+#       NAME xx:       Short name used display in listbox, menu choice
+#                      etc for xx Language
+#       DESC xx:       Description of the blacklist for xx Language
+#
+#       To add support for other languages please send mail to:
+#       info (at) shalla.de
+#
+NAME:   custom
+DEFAULT_TYPE: black
+SOURCE: https://github.com/thytetgc/nxfilter.git
+DESC EN: Sites brasileiros usados em empresas em comum.
+DESC DE: Sites brasileiros usados em empresas em comum.
+DESC FR: Sites brasileiros usados em empresas em comum.
+DESC RU: Sites brasileiros usados em empresas em comum.
+NAME EN: Custom
+NAME DE: Custom
+NAME FR: Custom
+NAME IT: Custom
+NAME NL: Custom
+NAME PT: Custom
+NAME ES: Custom
+NAME RU: Custom
