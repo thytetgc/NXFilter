@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+CLUSTER=`grep ^cluster_mode /nxfilter/conf/cfg.properties | cut -d"=" -f2`
+
+if [ "$CLUSTER" -ne "2" ]
+then
+        /etc/init.d/nxfilter stop
+
+        # Salva DB de trafego
+        #DATE=`/bin/date +%F`
+        #mv -f /nxfilter/db/traffic.h2.db /nxfilter/db/traffic.h2.db.$DATE
+        mv -f /nxfilter/db/traffic.h2.db /nxfilter/db/traffic.h2.db.last
+        rm -f /nxfilter/db/traffic.lock.db
+
+        # Atualiza Blacklist
+        cd /nxfilter/bin/
+        #sh ./update-sh.sh
+        sh ./nx-shalla-update.sh
+
+        /etc/init.d/nxfilter start
+fi
