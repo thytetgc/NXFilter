@@ -31,11 +31,13 @@ fi
 
 echo "Download de Blacklist UTI..."
 cd /tmp
-wget ftp://ftp.ut-capitole.fr/pub/reseau/cache/squidguard_contrib/blacklists.tar.gz
+#wget ftp://ftp.ut-capitole.fr/pub/reseau/cache/squidguard_contrib/blacklists.tar.gz
+wget https://web.archive.org/web/20210502020725if_/http://www.shallalist.de/Downloads/shallalist.tar.gz
 
 echo "Extraindo Blacklist.tar.gz..."
-tar -xf blacklists.tar.gz
-mv blacklists BL
+#tar -xf blacklists.tar.gz
+#mv blacklists BL
+tar -zxvf shallalist.tar.gz
 
 echo "Parando Serviço NxFilter..."
 $NX_HOME/bin/shutdown.sh
